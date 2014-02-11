@@ -38,45 +38,11 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 app">
                     <div class="input-group input-group-lg todo-input-box">
-                        <input type="text" class="form-control new-todo-input" placeholder="What needs to get done?"/>
-                        <span class="input-group-btn"><button class="btn btn-default add-button" type="button">Carpe</button></span>
+                        <input type="text" class="form-control new-todo-input js-new-todo-input" placeholder="What needs to get done?"/>
+                        <span class="input-group-btn"><button class="btn btn-default add-button js-add-todo" type="button">Carpe</button></span>
                     </div>  
                     <div class="todo-items">
-                        <div class="todo-item">
-                            <button type="button" class="btn btn-default btn-lg edit-button" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-lg done-button" style="padding-left: 4px; padding-right: 4px;"> 
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <div class="todo-description">Item 1</div>
-                            <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <div class="todo-item">
-                            <button type="button" class="btn btn-default btn-lg edit-button" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-lg done-button" style="padding-left: 4px; padding-right: 4px;"> 
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <div class="todo-description">Item 1</div>
-                            <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>                        <div class="todo-item">
-                            <button type="button" class="btn btn-default btn-lg edit-button" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-lg done-button" style="padding-left: 4px; padding-right: 4px;"> 
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <div class="todo-description">Item 1</div>
-                            <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
+                        <!-- Template will appear here -->
                     </div>  
                 </div>
             </div>
@@ -85,6 +51,22 @@
                 <p>♥ from the Yeoman team</p>
             </div>
         </div>
+        <!-- Template here -->
+        <script type="text/template" class="todo-template">
+            <div class="todo-item">
+                <button type="button" class="btn btn-default btn-lg edit-button" style="padding-left: 4px; padding-right: 4px;">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-lg done-button" style="padding-left: 4px; padding-right: 4px;"> 
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <div class="todo-description">Item 1</div>
+                <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+        </script>
+        <!-- End Template -->
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
