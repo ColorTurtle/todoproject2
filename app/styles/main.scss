@@ -1,0 +1,169 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52d8321dded7d_1.JPG)
+}
+
+a {
+    color: white;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    background: rgba(0, 0, 0, 0.43);
+    padding-top: 10px;
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+    }
+
+    .text-muted {
+        color: white;
+    }
+}
+
+/* Custom page footer */
+.footer {
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    border-top: none;
+    padding-top: 40px;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+.row {
+    margin: 10px;
+}
+
+.app {
+    background: rgba(0, 0, 0, 0.43);
+    padding: 15px;
+
+    .todo-input-box {
+        background: white;
+        padding: 10px 10px;
+
+        .new-todo-input {
+            border: none;
+            box-shadow: none;
+            font-size: 25px;
+        }
+
+        .add-button {
+            color: white;
+            background: #40628D;
+        }
+
+        .input-group-btn:last-child > .btn {
+            border-bottom-left-radius: 6px;
+            border-top-left-radius: 6px;
+        }
+
+    }
+
+    .todo-items {
+
+        padding: 15px 0px;
+        background: white;
+
+        .todo-item {
+            padding: 15px 10px;
+            width: 100%;
+            background: none;
+
+            &:hover {
+                background: rgb(238, 235, 235);
+            }
+
+            .edit-button {
+                display: inline-block;
+                background: none;
+                border: none;
+                color: rgb(189, 186, 186);
+            }
+
+            .done-button {
+                display: inline-block;
+                background: none;
+                border: none;
+                color: rgb(189, 186, 186);
+            }
+
+            .todo-description {
+                display: inline-block;
+                width: 55%;
+                font-size: 18px;
+            }
+
+            .remove-button {
+                background: none;
+                border: none;
+                color: rgb(167, 20, 20);
+
+                &:hover {
+                    font-size: 22px;
+                }
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }
+
+            }
+        }
+    }
+
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 960px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
