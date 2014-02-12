@@ -1,6 +1,7 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
+@import "compass/css3";
 
 .browsehappy {
     margin: 0.2em 0;
@@ -31,7 +32,7 @@ a {
 /* Custom page header */
 .header {
     border-bottom: 1px solid #e5e5e5;
-    background: rgba(0, 0, 0, 0.43);
+    background: rgba(11, 13, 24, 0.53);
     padding-top: 10px;
 
     /* Make the masthead heading the same height as the navigation */
@@ -64,12 +65,12 @@ a {
 }
 
 .app {
-    background: rgba(0, 0, 0, 0.43);
+    background: rgba(11, 13, 24, 0.53);
     padding: 15px;
 
     .todo-input-box {
         background: white;
-        padding: 10px 10px;
+        padding: 15px 10px;
 
         .new-todo-input {
             border: none;
@@ -91,7 +92,7 @@ a {
 
     .todo-items {
 
-        padding: 15px 0px;
+        padding-bottom: 10px;
         background: white;
 
         .todo-item {
@@ -121,6 +122,9 @@ a {
                 display: inline-block;
                 width: 55%;
                 font-size: 18px;
+                padding-top: 7px;
+                padding-left: 10px;
+                color: rgb(87, 86, 86);
             }
 
             .remove-button {
