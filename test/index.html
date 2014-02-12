@@ -8,6 +8,45 @@
 </head>
 <body>
     <div id="mocha"></div>
+<!-- Begin index.html -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 app">
+                    <div class="input-group input-group-lg todo-input-box">
+                        <input type="text" class="form-control new-todo-input js-new-todo-input" placeholder="What needs to get done?"/>
+                        <span class="input-group-btn"><button class="btn btn-default add-button js-add-todo" type="button">Carpe</button></span>
+                    </div>  
+                    <div class="todo-items">
+                        <!-- Template will appear here -->
+                    </div>  
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>♥ from the Yeoman team</p>
+            </div>
+        </div>
+        <!-- Template here -->
+        <script type="text/template" class="todo-template">
+            <div class="todo-item" id="<%= id %>">
+                <button type="button" class="btn btn-default btn-lg edit-button pull-left" style="padding-left: 4px; padding-right: 4px;">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-lg done-button pull-left" style="padding-left: 4px; padding-right: 4px;"> 
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <div class="todo-description"><%= description %> (Id: <%= id %>)</div>
+                <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+        </script>
+        <!-- End Template -->
+
+
+
+<!-- End index.html -->
+
     <script src="bower_components/mocha/mocha.js"></script>
     <script>mocha.setup('bdd')</script>
     <script src="bower_components/chai/chai.js"></script>
@@ -24,7 +63,7 @@
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>  
+    <script src="/bower_components/underscore/underscore.js"></script>  
     <script src="bower_components/jquery/jquery.js"></script>  
 
     <script>mocha.run()</script>

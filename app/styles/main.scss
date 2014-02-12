@@ -81,6 +81,16 @@ a {
         .add-button {
             color: white;
             background: #40628D;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background: rgb(69, 139, 194);
+
+            }
+
+            &:focus {
+                outline: none;
+            }
         }
 
         .input-group-btn:last-child > .btn {
@@ -101,7 +111,7 @@ a {
             background: none;
 
             &:hover {
-                background: rgb(238, 235, 235);
+                background: #EAEBF1;
             }
 
             .edit-button {
@@ -109,6 +119,8 @@ a {
                 background: none;
                 border: none;
                 color: rgb(189, 186, 186);
+                transition: all 0.5s ease;
+
             }
 
             .done-button {
@@ -116,6 +128,8 @@ a {
                 background: none;
                 border: none;
                 color: rgb(189, 186, 186);
+                transition: all 0.5s ease;
+
             }
 
             .todo-description {
@@ -131,6 +145,8 @@ a {
                 background: none;
                 border: none;
                 color: rgb(167, 20, 20);
+                transition: all 0.5s ease;
+
 
                 &:hover {
                     font-size: 22px;
