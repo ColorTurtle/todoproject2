@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="mocha"></div>
-<!-- Begin index.html -->
+    <!-- Begin index.html -->
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 app">
@@ -21,22 +21,18 @@
                     </div>  
                 </div>
             </div>
-
-            <div class="footer">
-                <p>♥ from the Yeoman team</p>
-            </div>
         </div>
         <!-- Template here -->
         <script type="text/template" class="todo-template">
             <div class="todo-item" id="<%= id %>">
-                <button type="button" class="btn btn-default btn-lg edit-button pull-left" style="padding-left: 4px; padding-right: 4px;">
+                <button type="button" class="btn btn-default btn-lg edit-button pull-left js-edit-button" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-lg done-button pull-left" style="padding-left: 4px; padding-right: 4px;"> 
+                <button type="button" class="btn btn-default btn-lg done-button js-done-button pull-left" style="padding-left: 4px; padding-right: 4px;"> 
                     <span class="glyphicon glyphicon-ok"></span>
                 </button>
-                <div class="todo-description"><%= description %> (Id: <%= id %>)</div>
-                <button type="button" class="btn btn-default btn-lg remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
+                <div class="todo-description"><%= description %> <br><span>(Id: <%= id %>)<span></div>
+                <button type="button" class="btn btn-default btn-lg remove-button js-remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
