@@ -30,13 +30,15 @@ $(document).ready(function(){
 	_.each(todoList, function(item){
 		$('.todo-items').prepend(todoTemplate(item));
 	});
-
-	$('.todo-item').hover(function(){
-		$(this).children('.edit-button').toggleClass('visible')
+// This function is not working 
+	$('.todo-items').on('mouseenter mouseleave', '.todo-item', function(){
+		console.log('Hover function for todo-item working.');
+		$(this).children('.edit-button').toggleClass('visible');
 	});
 
-		$('.todo-item').hover(function(){
-		$(this).children('.remove-button').toggleClass('visible')
+	$('.todo-items').on('mouseenter mouseleave', '.todo-item', function(){
+		console.log('Hover function for todo-item working.');
+		$(this).children('.remove-button').toggleClass('visible');
 	});
 
 
@@ -92,8 +94,8 @@ $(document).ready(function(){
 	});
 
 	$('.todo-items').on('click', '.js-edit-button', function(){
-		$(this)	.children('.todo-description').replaceAll(editTemplate);
-		console.log('Input should replace .description');
+		$(this).siblings('.todo-description').replaceAll(todoEditTemplate);
+		console.log('Input should replace description');
 
 	});
 

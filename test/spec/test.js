@@ -18,13 +18,15 @@
             	$('.js-new-todo-input').val('Grab some beer.');
             	$('.js-add-todo').click();
             	var firstTodoText = $('.todo-item').first().children('.todo-description').text();
-            	expect(todoList.length).to.equal(4);
+            	expect(todoList.length).to.equal(5);
             });
         });
         
         describe('when the remove button is clicked', function () {
         		it('should remove the corresponding parent div', function(){
-        			// ($('#todo1').children($('.remove-button'))).click();
+        			($('#todo1').children($('.js-remove-button'))).click();
+                    var deletedTodo = _.findWhere(todoList, function(item){return item.id == todo1});
+                    expect(deletedTodo).to.equal('undefined')
         		});
         		it('should remove the corresponding object from the array');
 
