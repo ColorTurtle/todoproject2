@@ -28,11 +28,12 @@
                 <button type="button" class="btn btn-default btn-lg edit-button pull-left js-edit-button" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-lg done-button js-done-button pull-left" style="padding-left: 4px; padding-right: 4px;">  
+
+                <button type="button" class="btn btn-default btn-lg done-button js-done-button pull-left" style="padding-left: 4px; padding-right: 4px;"> 
                     <span class="glyphicon glyphicon-ok"></span>
                 </button>
                 <div class="todo-description"><%= description %> <br><span>(Id: <%= id %>)<span></div>
-                    <button type="button" class="btn btn-default btn-lg remove-button js-remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
+                <button type="button" class="btn btn-default btn-lg remove-button js-remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
@@ -53,10 +54,11 @@
     </script>
 
     <!-- include source files here... -->
-    <script src="bower_components/jquery/jquery.js"></script>  
-    <script src="bower_components/underscore/underscore.js"></script>  
-    <script src="scripts/main.js"></script>
+
     <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="../app/bower_components/jquery/jquery.js"></script>
+    <script src="../app/bower_components/underscore/underscore.js"></script>
+    <script src="../app/scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- include spec files here... -->
