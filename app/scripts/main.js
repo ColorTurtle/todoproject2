@@ -14,7 +14,7 @@ var todoList = [
 	},
 
 	{
-		description: 'Get a ride to the airport',
+		description: 'Grab a ride to the airport',
 		done: false,
 		id: _.uniqueId('todo')
 	}
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	});
 
 	$('.todo-items').on('click', '.js-edit-button', function(){
-		$(this).children('.todo-description').replaceAll(editTemplate);
+		$(this)	.children('.todo-description').replaceAll(editTemplate);
 		console.log('Input should replace .description');
 
 	});
