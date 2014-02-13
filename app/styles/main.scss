@@ -109,9 +109,10 @@ a {
             padding: 15px 10px;
             width: 100%;
             background: none;
+            border-top: 1px dotted rgb(228, 226, 226);
 
             &:hover {
-                background: #EAEBF1;
+                background: #F2F3F8;
             }
 
             .edit-button {
@@ -119,7 +120,23 @@ a {
                 background: none;
                 border: none;
                 color: rgb(189, 186, 186);
-                transition: all 0.5s ease;
+                display: hidden;
+                visibility: hidden;
+
+                &.visible {
+                    visibility: visible;
+                }
+
+                &:hover {
+                    color: rgb(224, 183, 20);
+                }
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }
+
 
             }
 
@@ -130,6 +147,17 @@ a {
                 color: rgb(189, 186, 186);
                 transition: all 0.5s ease;
 
+                &.done {
+                color: green;
+                }
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }
+
+
             }
 
             .todo-description {
@@ -139,13 +167,38 @@ a {
                 padding-top: 7px;
                 padding-left: 10px;
                 color: rgb(87, 86, 86);
+
+                &.done {
+                    color: rgb(185, 184, 184);
+                    text-decoration: line-through;
+                }
+
+                span {
+                    color: rgb(189, 186, 186);
+                }
+            }
+
+            .edit-input {
+                font-size: 18px;
+                border: none;
+                box-shadow: none;
+                background: none;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             .remove-button {
                 background: none;
                 border: none;
                 color: rgb(167, 20, 20);
-                transition: all 0.5s ease;
+                display: hidden;
+                visibility: hidden;
+
+                &.visible {
+                    visibility: visible;
+                }
 
 
                 &:hover {
