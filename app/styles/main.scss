@@ -173,19 +173,29 @@ a {
                     text-decoration: line-through;
                 }
 
-                span {
+                span.id {
                     color: rgb(189, 186, 186);
                 }
+
+                .editInputDiv {
+                    // visibility: hidden;
+                }
+
             }
 
-            .edit-input {
+            input.edit-input {
                 font-size: 18px;
                 border: none;
-                box-shadow: none;
+                // box-shadow: none;
                 background: none;
+                // visibility: hidden;
 
                 &:focus {
-                    outline: none;
+                    // outline: none;
+                }
+
+                &.visible {
+                    visibility: hidden;
                 }
             }
 
