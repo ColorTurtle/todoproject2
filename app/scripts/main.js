@@ -146,11 +146,12 @@ $(document).ready(function(){
 		}
 		console.log('Pushed new value into new object literal');
 		var parentId = $(this).parent().attr('id');
-		// Grabbing wrong item from the todoList 
 		console.log('Identified this div parentId as ' + parentId)
+		// Grabbing wrong item from the todoList - grabs last item entered
 		var todoToChange = _.findWhere(todoList, {id: parentId});
 		console.log('Pulled corresponding item from todoList array as ' + todoToChange);
-		todoToChange.description = todoEdited.description;
+		console.log(todoToChange.description);
+		todoEdited.description = todoToChange.description;
 		console.log('replaced ' + todoToChange.description + ' with ' + todoEdited.description);
 		renderedEditTemplate = todoCompletedEditTemplate(todoToChange);
 		$(renderedEditTemplate).replaceAll($(this).siblings('.todo-description'));
