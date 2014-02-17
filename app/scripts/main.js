@@ -43,6 +43,8 @@ $(document).ready(function(){
 		$(this).children('.remove-button').toggleClass('visible');
 	});
 
+	$('.js-todoCountNumber').append(todoList.length);
+	console.log('Lenth of items calculated to be ' + todoList.length);
 
 	$('.js-add-todo').click(function(){
 
@@ -63,13 +65,19 @@ $(document).ready(function(){
 		$('.todo-items').prepend(renderedTemplate);
 
 		(todoList).push(todo);
+		console.log('Item added, now array has ' + todoList.length + ' items.')
+		console.log('Replace item count with ' + todoList.length);
+		$( ".js-todoCountNumber" ).html(function() {
+			var newCount = todoList.length;
+			return newCount;
+		});
 
 		// $('.todo-input-box').trigger("reset");  
 		// Not resetting - do I need to add a form tag for reset to work properly?
 
 	});
 
-
+// Get form to submit upon 'return' key
 
 	$('.todo-items').on('click', '.js-remove-button', function(){
 		console.log('About to take this sucka out.');
@@ -80,6 +88,14 @@ $(document).ready(function(){
 		console.log('Array length after removal is', todoList.length);
 		$(this).parent().remove();
 		console.log('Removed ',$(this).parent())
+
+		console.log('Item removed, now array has ' + todoList.length + ' items.')
+		console.log('Replace item count with ' + todoList.length);
+		$( ".js-todoCountNumber" ).html(function() {
+			var newCount = todoList.length;
+			return newCount;
+		});
+
 	});
 
 	$('.todo-items').on('click', '.js-done-button', function(){
@@ -95,8 +111,11 @@ $(document).ready(function(){
 		console.log('Edit mode class is being exchanged on edit-button.');
 		$(this).toggleClass('js-editmode-button');
 		$(this).toggleClass('js-edit-button');
+		$(this).parent().toggleClass('editmodeOn');
+		$(this).parent().toggleClass('editmodeOff');
 		var parentId = $(this).parent().attr('id');
 		console.log(parentId);
+
 		console.log(document.getElementById(parentId));
 		// STill not working, but getting closer.
 		// $("<input>").replaceAll($(this).siblings($('.descriptionContent')));
@@ -111,69 +130,64 @@ $(document).ready(function(){
 		console.log(descId);
 		console.log(descToEdit);
 		var divToEdit = document.getElementById(descId);
-		console.log('Captured div to edit.')
+		console.log('Captured div to edit.');
 		renderedEditTemplate = todoEditTemplate(todoEdit);
-		console.log('Created template with new data.')
+		console.log('Created template with new data.');
 		$(renderedEditTemplate).replaceAll($(this).siblings('.todo-description'));
-		console.log('Replaced template.')
-		// Next line replaces content w/input but won't allow me
-		// to include a value into the input via a variable
-		// $("<input class='edit-input'>").replaceAll($(this).siblings('.todo-description'));
-
-
-		// return todoItemsArray
-		// console.log('Should return the todo-description.')
-		// var inputTarget = $(todoItemsArray).children('.editInputDiv')
-		// return inputTarget
-		// (inputTarget).toggleClass('.visible');
-		// locate corresponding item in array
-		// var currentItem = _.findWhere(todoList, function(item){return item.id == parentId});
-		// var	currentDescription = currentItem.description;
-		
-		// var todoOriginal = $('#todo1').children($('.todo-description')).children($('.content'));
-		// editDescription(currentDescription);
-		
+		console.log('Replaced template.');		
 	});
 
 	$('.todo-items').on('click', '.js-editmode-button', function(){
 		console.log('Edit class is being replaced on edit-button.');
 		$(this).toggleClass('js-editmode-button');
 		$(this).toggleClass('js-edit-button');
-		var newDescription = $('.edit-input').val();
-		console.log('Pulled value from the input.')
+		$(this).parent().toggleClass('editmodeOn');
+		$(this).parent().toggleClass('editmodeOff');
+
+		var newDescription = $('.editmode-input').val();
+		console.log('Pulled value from the input as ' + newDescription);
 		var todoEdited = {
 			description: newDescription
 		}
 		console.log('Pushed new value into new object literal');
 		var parentId = $(this).parent().attr('id');
-		console.log('Identified this div parentId as ' + parentId)
+		console.log('Identified this div parentId as ' + parentId);
 		// Grabbing wrong item from the todoList - grabs last item entered
 		var todoToChange = _.findWhere(todoList, {id: parentId});
 		console.log('Pulled corresponding item from todoList array as ' + todoToChange);
 		console.log(todoToChange.description);
-		todoEdited.description = todoToChange.description;
-		console.log('replaced ' + todoToChange.description + ' with ' + todoEdited.description);
+		todoToChange.description = newDescription;
+		console.log('replaced ' + todoToChange.description + ' with ' + newDescription);
 		renderedEditTemplate = todoCompletedEditTemplate(todoToChange);
 		$(renderedEditTemplate).replaceAll($(this).siblings('.todo-description'));
 	});
 
+$('.todo-items').on('click', '.js-todoAll', function(){
+		$( ".todo-items" ).html(null);
 
-// $('.todo-items').on('click', '.js-update-button', function(){
-// 		var parentId = $(this).parent().attr('id');
-// 		console.log('About to update', parentId);
+		replaceAction = function(){
+			_.each(todoList, function(item){
+				$('.todo-items').prepend(todoTemplate(item));
+			});
+		};
 
-// 		todoArrayItem = _.findWhere(todoList, function(item){return item.id == parentId});
-
-// 		var editedTemplate = todoEditTemplate(todo);
-
-// 		var newDescription = $('.edit-input').val();
-
-// 		todoArrayItem.description = newDescription;
-// 		console.log('New description should be put into array.');
-// 		$(this).children('.todo-description').replaceAll(editTemplate);
-// 		console.log('Input should replace .description');
-
-// 	});
+		replaceAction()
+		})
 
 
 });
+
+// $('.todo-items').on('click', '.js-todoActive', function(){
+// 		$( ".todo-items" ).html(null);
+
+// 		replaceAction = function(){
+// 			_.each(todoList, function(item){
+// 				$('.todo-items').prepend(todoTemplate(item));
+// 			});
+// 		};
+
+// 		replaceAction()
+// 		})
+
+
+// });

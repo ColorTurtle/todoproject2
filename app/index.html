@@ -37,18 +37,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 app">
-                    <div class="input-group input-group-lg todo-input-box">
+                    <form role="form">
+                    <div class="input-group input-group-lg todo-input-box form-group">
                         <input type="text" class="form-control new-todo-input js-new-todo-input" placeholder="What needs to get done?"/>
                         <span class="input-group-btn"><button class="btn btn-default add-button js-add-todo" type="button">Carpe</button></span>
-                    </div>  
+                    </div>
+                    <div class="todo-counter row">
+                        <div class="todoCount js-todoCount col-md-4 col-xs-3"> <span class='js-todoCountNumber'> </span> items left</div>
+                        <div class='js-todoAll todoAll col-md-2 col-xs-2'>All</div>
+                        <div class="js-todoActive todoActive col-md-2 col-xs-2">Active</div>
+                        <div class='js-todoDone col-md-2 col-xs-2'>Done</div>
+                    </div>
+                    </form>  
                     <div class="todo-items">
                         <!-- Template will appear here -->
-                    <div class="todo-counter row">
-                        <div class="todoActive col-md-3">items left</div>
-                        <div class='todoAll col-md-2'>All</div>
-                        <div class="js-todoActive col-md-2">Active</div>
-                        <div class='js-todoDone col-md-2'>Done</div>
-                    </div>
                     </div>  
                 </div>
             </div>
@@ -59,7 +61,7 @@
         </div>
         <!-- Template here -->
         <script type="text/template" class="todo-template">
-            <div class="todo-item" id="<%= id %>">
+            <div class="todo-item editmodeOff" id="<%= id %>">
                 <button type="button" class="btn btn-default btn-lg edit-button pull-left js-edit-button" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
@@ -68,9 +70,7 @@
                 </button>
                 <div class="todo-description">
                     <span class='descriptionContent' id='<%= descId %>'><%= description %></span> <br><span class='id'>(Id: <%= id %>)</span>
-                    <div class="editInputDiv">
-                        <input type="text" value="<%= description %>" class="input-group input-group-lg edit-input form-control"/>
-                        </div>
+                    
                     </div>
                 <button type="button" class="btn btn-default btn-lg remove-button js-remove-button pull-right" style="padding-left: 4px; padding-right: 4px;">
                     <span class="glyphicon glyphicon-remove"></span>
@@ -80,15 +80,13 @@
 
         <script type="text/template" class="todoEditTemplate">
                 <div class="todo-description input-group">
-                    <input type="text" value="<%= descToEdit %>" class="input-group input-group-lg edit-input form-control"/>
+                    <input type="text" value="<%= descToEdit %>" class="input-group input-group-lg editmode-input form-control"/>
                 </div>
         </script>
         <script type="text/template" class="todoCompletedEditTemplate">
                 <div class="todo-description">
                 <span class='descriptionContent' id='<%= descId %>'><%= description %></span> <br><span class='id'>(Id: <%= id %>)</span>
-                    <div class="editInputDiv">
-                        <input type="text" value="<%= description %>" class="input-group input-group-lg edit-input form-control"/>
-                        </div>                </div>
+               </div>
         </script>
 
         <!-- End Template -->

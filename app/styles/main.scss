@@ -71,6 +71,7 @@ a {
     .todo-input-box {
         background: white;
         padding: 15px 10px;
+        margin-bottom: 0px;
 
         .new-todo-input {
             border: none;
@@ -100,6 +101,25 @@ a {
 
     }
 
+    .todo-counter {
+        background: white;
+        color: gray;
+
+        &.row {
+            margin: 0px;
+        }
+
+        .todoCount {
+            padding-left: 25px;
+        }
+
+        .todoAll {
+            &:hover {
+                color: #40628D;
+            }
+        }
+    }
+
     .todo-items {
 
         padding-bottom: 10px;
@@ -113,6 +133,18 @@ a {
 
             &:hover {
                 background: #F2F3F8;
+            }
+
+            &.editmodeOn {
+                background: rgb(241, 230, 93);
+            }
+
+            &.editmodeOff {
+                background: none;
+
+                &:hover {
+                background: #F2F3F8;
+                }
             }
 
             .edit-button {
@@ -137,7 +169,14 @@ a {
                     box-shadow: none;
                 }
 
+            }
 
+            .js-editmode-button {
+                color: #E02414;
+
+                &:hover {
+                    color: #E02414;
+                }
             }
 
             .done-button {
@@ -183,12 +222,14 @@ a {
 
             }
 
-            input.edit-input {
+            input.editmode-input {
                 font-size: 18px;
                 border: none;
-                // box-shadow: none;
+                box-shadow: none;
                 background: none;
-                // visibility: hidden;
+                color: #E02414;
+                padding-bottom: 15px;
+                padding-left: 0px;
 
                 &:focus {
                     // outline: none;
